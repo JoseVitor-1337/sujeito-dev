@@ -1,12 +1,14 @@
 import Head from "next/head";
-
+import Image from "next/image";
 import styles from "../styles/home.module.scss";
+
+import techs from "../../public/images/techs.svg";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Sujeito Dev - Home</title>
+        <title>Home - Sujeito Programador</title>
       </Head>
       <main className={styles.container}>
         <div className={styles.header}>
@@ -22,7 +24,59 @@ export default function Home() {
               <button>COMEÇAR AGORA </button>
             </a>
           </section>
-          <img src="/images/banner-conteudos.png" alt="Banner" />
+          <img
+            src="/images/banner-conteudos.png"
+            alt="Banner do Sujeito Programador"
+          />
+        </div>
+
+        <hr className={styles.divider} />
+
+        <div className={styles.sectionContent}>
+          <section>
+            <h2>Aprenda criar aplicativos para Android e IOS</h2>
+            <span>
+              Você vai descobrir o jeito mais moderno de desenvolver apps
+              nativos para IOS e Android, construindo aplicativos do zero até o
+              deploy
+            </span>
+          </section>
+
+          <img
+            src="/images/financasApp.png"
+            alt="Conteúdo de desenvolvimento de Apps "
+          />
+        </div>
+
+        <hr className={styles.divider} />
+
+        <div className={styles.sectionContent}>
+          <img
+            src="/images/webDev.png"
+            alt="Conteúdo de desenvolvimento de aplicações WEB"
+          />
+
+          <section>
+            <h2>Aprenda criar sistemas WEB</h2>
+            <span>
+              Criar sistemas web, sites usando as tecnologias mais modernas e
+              requisitadas pelo mercado.
+            </span>
+          </section>
+        </div>
+
+        <div className={styles.nextLevelContent}>
+          <Image src={techs} alt="Tecnologias" />
+          <h2>
+            Mais de <span className={styles.studants}>15 mil</span> já levaram
+            sua carreira para o próximo nível
+          </h2>
+          <span>
+            E você vai perder a chance de evoluir de uma vez por todas?
+          </span>
+          <a>
+            <button>COMEÇAR AGORA!</button>
+          </a>
         </div>
       </main>
     </>
