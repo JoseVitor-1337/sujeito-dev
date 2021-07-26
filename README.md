@@ -12,7 +12,7 @@
 
 <br />
 
-### How i start this site?
+### How do I start this site?
 
 <br />
 
@@ -20,7 +20,7 @@
 
 > Need have **git** installed [Go Here to install](https://git-scm.com/downloads)
 
-> Need undenstando how CMS **prismic** work, [Go here to learn](https://prismic.io/)
+> Need understand how CMS **prismic** work, [Go here to learn](https://prismic.io/)
 
 <br />
 
@@ -31,9 +31,9 @@
 Open you Terminal and run this commands:
 
 ```
-git clone https://github.com/JoseVitor-1337/board-app.git
+git clone https://github.com/JoseVitor-1337/sujeito-dev.git
 
-cd board-app
+cd sujeito-dev
 
 npm install
 
