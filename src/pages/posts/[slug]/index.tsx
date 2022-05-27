@@ -1,16 +1,15 @@
 import { GetServerSideProps } from 'next'
 import Image from "next/image";
-import Head from "next/head";
-import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
 import { getPrismicClient } from "../../../services/prismic";
-
+import Head from "../../../components/Head";
 import styles from "./styles.module.scss";
-import { get } from 'https';
+
 
 type Post = {
   title: string;
   slug: string;
+  seoDescription: string;
   description: string;
   cover: string;
   updatedAt: string;
@@ -24,9 +23,14 @@ export default function PostDetails({ post }: IPostsProps) {
 
   return (
     <>
-      <Head>
-        <title>{post.title}</title>
-      </Head>
+      <Head 
+        url={`https://sujeito-dev.vercel.app/posts/${post.slug}`} 
+        title={post.title} 
+        description={post.seoDescription} 
+        image={post.cover} 
+        siteName="Sujeito Dev" 
+      />
+        
 
       <main className={styles.container}>
         <article className={styles.post}>
@@ -67,6 +71,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, params }) =>
   const post = {
     slug,
     title: RichText.asText(response.data.title),
+    seoDescription: response.data.description.find((content) => content.type === "paragraph")?.text ?? "",
     description: RichText.asHtml(response.data.description),
     cover: response.data.cover.url,
     updatedAt: new Date(response.last_publication_date).toLocaleDateString("pt-Br", { day: "2-digit", month: "long", year: "numeric"})
