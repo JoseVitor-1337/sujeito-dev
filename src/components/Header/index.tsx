@@ -26,9 +26,9 @@ export function Header() {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <a>
+        <Link passHref href="/">
           <Imagem src={logo} alt="Sujeito programado" />
-        </a>
+        </Link>
 
         <nav>
           {links.map((link) => (

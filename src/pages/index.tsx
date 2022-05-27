@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/home.module.scss";
 
 import techs from "../../public/images/techs.svg";
@@ -20,14 +21,20 @@ export default function Home() {
               trabalho
             </span>
 
-            <a href="">
-              <button>COMEÇAR AGORA </button>
-            </a>
+            <div>
+              <Link passHref href="/">
+                <button>COMEÇAR AGORA</button>
+              </Link>
+            </div>
+                    
           </section>
-          <img
-            src="/images/banner-conteudos.png"
-            alt="Banner do Sujeito Programador"
-          />
+             <Image
+              width={400}
+              height={400}
+              src="/images/banner-conteudos.png"
+              alt="Banner do Sujeito Programador"
+            />
+ 
         </div>
 
         <hr className={styles.divider} />
@@ -42,16 +49,22 @@ export default function Home() {
             </span>
           </section>
 
-          <img
+          <Image
+            width={400}
+            height={400}
             src="/images/financasApp.png"
             alt="Conteúdo de desenvolvimento de Apps "
           />
+        
         </div>
 
         <hr className={styles.divider} />
 
         <div className={styles.sectionContent}>
-          <img
+
+          <Image
+            width={400}
+            height={400}
             src="/images/webDev.png"
             alt="Conteúdo de desenvolvimento de aplicações WEB"
           />
