@@ -7,7 +7,7 @@
   * [Features](#features)
   * [Technologies](#technologies)
   * [Installation](#installation)
-  * [Getting started](#usage)
+  * [Getting started](#getting-started)
  
 ## Technologies
 
